@@ -1,0 +1,48 @@
+{% load static %}
+<!-- Header -->
+<header class="" id="header-main">
+  <!-- Navbar -->
+  <nav class="navbar navbar-main navbar-expand-lg shadow navbar-light" id="navbar-main">
+    <div class="container">
+      <!-- Toggler -->
+      <button class="navbar-toggler order-lg-2 ml-n3 ml-lg-0" type="button" data-toggle="collapse"
+        data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Brand -->
+      <a class="navbar-brand order-lg-1" href="{% url 'room-index' %}">
+        <img alt="Image placeholder" src="{% static 'img/brand/4.png' %}" id="navbar-logo">
+      </a>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-overlay order-lg-3" id="navbar-main-collapse">
+        <!-- Toggler -->
+        <div class="position-relative">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse"
+            aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i data-feather="x"></i>
+          </button>
+        </div>
+
+        {% include 'classroom/partials/_main_nav.html' %}
+
+        <!-- Right navigation -->
+        {% include 'classroom/partials/_right_nav.html' %}
+
+        <!-- Mobile button -->
+        <div class="d-lg-none px-4 text-center">
+          <a href="{% url 'classroom:teachers_list' %}"
+            class="btn btn-block btn-sm btn-warning">Find Tutors</a>
+        </div>
+      </div>
+      <!-- Avatar menu -->
+      <div class="order-lg-4 ml-lg-3">
+        <a class="" href="#modal-profile" role="button" data-toggle="modal">
+          <span class="avatar rounded-circle">
+            <img alt="Image placeholder" src="{{ account.image_url }}">
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

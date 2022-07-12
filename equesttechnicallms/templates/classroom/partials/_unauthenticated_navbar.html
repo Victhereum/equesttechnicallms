@@ -1,0 +1,89 @@
+{% load static %}
+<!-- Header -->
+<header class="header-transparent" id="header-main">
+  <!-- Navbar -->
+  <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-dark" id="navbar-main">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand" href="{% url 'room-index' %}">
+        <img alt="Image placeholder" src="{% static 'img/brand/favicon.png' %}" id="navbar-logo">
+      </a>
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse"
+        aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-overlay" id="navbar-main-collapse">
+        <!-- Toggler -->
+        <div class="position-relative">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse"
+            aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i data-feather="x"></i>
+          </button>
+        </div>
+
+          <!-- include 'partials/_main_nav.html' -->
+
+          {% if not user.is_authenticated %}
+        <!-- Right navigation -->
+        <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
+          <!-- Auth -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'room-index' %}">
+              <i data-feather="log-in"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'videos' %}">
+              <i data-feather="log-in"></i>
+              Videos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog:bloghome' %}">
+              <i data-feather="log-in"></i>
+              Blog
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'classroom:login' %}">
+              <i data-feather="log-in"></i>
+              Sign in
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'classroom:StudentSignUp' %}"
+              class="btn btn-sm btn-white btn-icon ml-3">
+              <span class="btn-inner--icon"><i data-feather="user-plus"></i></span>
+              <span class="btn-inner--text">Register</span>
+            </a>
+          </li>
+        </ul>
+        <!-- Mobile button -->
+         <div class="d-lg-none pb-2 px-5 text-center">
+          <a href="{% url 'room-index' %}"
+            class="btn btn-block btn-sm btn-primary">Home</a>
+        </div>
+         <div class="d-lg-none pb-2 px-5 text-center">
+          <a href="{% url 'blog:bloghome' %}"
+            class="btn btn-block btn-sm btn-primary">Blog</a>
+        </div>
+         <div class="d-lg-none pb-2 px-5 text-center">
+          <a href="{% url 'videos' %}"
+            class="btn btn-block btn-sm btn-primary">Videos</a>
+        </div>
+        <div class="d-lg-none pb-2 px-5 text-center">
+          <a href="{% url 'classroom:login' %}"
+            class="btn btn-block btn-sm btn-primary">Sign In</a>
+        </div>
+        <div class="d-lg-none px-5 text-center">
+          <a href="{% url 'classroom:StudentSignUp' %}"
+            class="btn btn-block btn-sm btn-primary">Register</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</header>

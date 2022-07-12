@@ -1,0 +1,84 @@
+{% load static %}
+<div class="modal fade fixed-right" id=modal-profile tabindex=-1 role=dialog aria-hidden=true>
+  <div class="modal-dialog modal-vertical" role=document>
+    <div class=modal-content>
+      <div class=modal-body>
+        <div><button type=button class=close data-dismiss=modal aria-label=Close><span
+              aria-hidden=true>&times;</span></button></div>
+        <div class=px-4>
+          <div class="d-flex my-4">
+            <div class="avatar-parent-child mx-auto"><img
+                alt="{{ request.user.get_full_name|default:request.user }} profile"
+                src="{{ account.image_url }}" width class="avatar avatar-xl rounded-circle"> <span
+                class="avatar-child avatar-badge bg-success"></span></div>
+          </div>
+          <div class="text-center mb-4">
+            <h6 class="h5 mb-0">{{ request.user.get_full_name|default:request.user }}</h6><span
+              class="d-block text-muted">{{ request.user.email }}</span>
+          </div>
+          <div class="d-flex mb-5">
+            <div class="col-auto"><a href="{% url 'base:profile' %}"
+                class="btn btn-xs btn-primary btn-icon rounded-pill"><span class="btn-inner--icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-user">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg></span> <span class="btn-inner--text">Profile</span></a></div>
+            <div class="col-auto"><a href="{% url 'message:message' %}" class="btn btn-xs btn-success btn-icon rounded-pill"><span
+                  class="btn-inner--icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-message-square">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg></span> <span class="btn-inner--text">Messages</span></a></div>
+          </div>
+          <div class="mb-5">
+            <div class="text-center mb-3"><span class="d-block h6 mb-1">Lessons Completed</span> <a href=#
+                class="h6 text-muted text-sm">42/50</a></div>
+            <div class=d-flex>
+              <div class="progress-circle progress-lg mx-auto" id="progress-performance-1" data-progress="72"
+                data-trailwidth="4" data-text="72%" data-textclass="h3" data-shape="circle" data-color="primary"
+                style="position: relative;"><svg viewBox="0 0 100 100" style="display: block;">
+                  <path d="M 50,50 m 0,-46.5 a 46.5,46.5 0 1 1 0,93 a 46.5,46.5 0 1 1 0,-93" stroke="#eee"
+                    stroke-width="4" fill-opacity="0"></path>
+                  <path d="M 50,50 m 0,-46.5 a 46.5,46.5 0 1 1 0,93 a 46.5,46.5 0 1 1 0,-93" stroke="#008aff"
+                    stroke-width="7" fill-opacity="0"
+                    style="stroke-dasharray: 292.273, 292.273; stroke-dashoffset: 81.8366;"></path>
+                </svg>
+                <div class="h3"
+                  style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(0, 138, 255);">
+                  72%</div>
+              </div>
+            </div>
+            <div class="mt-4 pt-4 border-top">
+            </div>
+          </div>
+          <div class="card shadow-none border-0 bg-section-secondary mt-8">
+            <div class="card-body pt-0 px-3 text-center">
+              <div class="pb-4 px-5 mt-n6"><img src="{% static 'img/brand/dark.png' %}" class="img-fluid img-center"
+                  alt=Illustration></div>
+              <h5 class="h5 mb-3">Ready to study?</h5>
+              <p class=text-muted>There's always something new for you to learn.</p><a
+                href="{% url 'lesson:new' %}" class="btn btn-sm btn-primary">Book a Lesson</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% if user.is_authenticated %}
+
+      <div class="modal-footer py-3 mt-auto"><a href="{% url 'account_logout' %}"
+          class="btn btn-block btn-sm btn-neutral btn-icon rounded-pill">
+          <span class=btn-inner--icon><i data-feather=log-out></i></span> <span class=btn-inner--text>Sign out</span>
+        </a></div>
+
+      {% else %}
+      <div class="modal-footer py-3 mt-auto"><a href="{% url 'account_login' %}"
+          class="btn btn-block btn-sm btn-neutral btn-icon rounded-pill">
+          <span class=btn-inner--icon><i data-feather=log-in></i></span> <span class=btn-inner--text>Sign in</span>
+        </a></div>
+      {% endif %}
+    </div>
+  </div>
+</div>

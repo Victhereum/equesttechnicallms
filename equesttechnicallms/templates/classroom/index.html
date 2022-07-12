@@ -1,0 +1,68 @@
+{% extends "classroom/partials/_layout.html" %}
+
+{% block title %}{% endblock title %}
+{% load static %}
+
+{% block body %}
+<!-- Main content -->
+<section class="slice py-8 bg-dark bg-cover bg-size--cover"
+  style="background-image: url({% static 'img/backgrounds/img-2.jpg' %});">
+  <!-- Mask -->
+  <span class="mask bg-gradient-dark opacity-8"></span>
+  <!-- Container -->
+  <div class="container d-flex align-items-center text-center text-lg-left pt-5 pb-5 pt-lg-6">
+    <div class="col px-0">
+      <div class="row row-grid align-items-center">
+        <div class="col-lg-8 text-center text-lg-left">
+          <!-- Heading -->
+          <h1 class="text-white mb-4">
+            Welcome to Equesttech
+          </h1>
+          <!-- Text -->
+          <p class="lead text-white opacity-8">
+            Since 2018, we have taken pride in our commitment to excellence, as well as our ability to deliver an amazing learning experience for our students and tutors.
+          </p>
+          <!-- Buttons -->
+          <div class="mt-5">
+            <a href="#" class="btn btn-secondary btn-lg btn-icon">
+              <span class="btn-inner--icon">
+                <i data-feather="edit-3"></i>
+              </span>
+              <span class="btn-inner--text">Contact us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SVG separator -->
+  <div class="shape-container shape-line shape-position-bottom">
+    <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;"
+      xml:space="preserve" class="">
+      <polygon points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+  </div>
+</section>
+
+<section class="slice slice-lg">
+  <div class="container">
+    <span class="badge badge-primary badge-pill">Our vision</span>
+    <div class="row mt-4">
+      <div class="col-lg-6 pr-lg-5">
+        <p class="h5 lh-180 mb-3">
+          Our vision at <span class="text-underline--dashed">Equesttech</span> is a learning platform that aims to provide the best learning environment for students by recommending qualified tutors to make sure students get the best of their payment. It also provide a safe learning environment to our Tutors and ensures that everyone is treated with respect.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <p class="lead lh-180">
+          We know that most times, students struggle to assimilate a lot of information given to them during lectures or classes and usually this is not enough to impart the necessary knowledge. Thus we created an easy-to-use platform that will enable students to relate to tutors and get the most out of learning.
+        </p>
+        <p class="lead lh-180">
+          We also give our tutors the best opportunity to share their knowledge gained through experience and earn an income out of it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}

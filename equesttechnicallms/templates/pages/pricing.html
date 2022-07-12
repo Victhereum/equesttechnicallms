@@ -1,0 +1,129 @@
+{% load static %}
+{% include 'pages/head.html' %}
+
+
+  <body>
+{% include 'pages/main_navbar.html' %}
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="bg-600">
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h6 class="font-sans-serif text-primary fw-bold">Our Plans </h6>
+              <h1 class="mb-6">Get in Reasonable Price</h1>
+            </div>
+{#            <div class="col">#}
+{#              <div class="d-flex justify-content-end">#}
+{#                <label class="form-check-label me-2" for="customSwitch1">Monthly</label>#}
+{#                <div class="form-check form-switch">#}
+{#                  <input class="form-check-input" id="customSwitch1" type="checkbox" checked="checked" />#}
+{#                  <label class="form-check-label align-top" for="customSwitch1">Yearly</label>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-5 mb-md-0 h-100">
+                <div class="text-center mb-5"><span class="badge bg-black fw-normal text-uppercase bg-secondary">Starter</span></div>
+                <div class="card-body px-4 py-6 py-md-5 py-lg-6">
+                  <div class="d-flex justify-content-start text-secondary"><span class="h4 mb-0 mt-2 me-2">$</span><span class="display-3 fw-medium">19.</span><span class="display-4 fw-medium">00</span></div>
+                  <p class="text-muted mb-2 my-md-3">A private limited is the most popular</p>
+                  <hr class="border border-1" />
+                  <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Access to 25 courses</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Course Discussions</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Offline Viewing</li>
+                    <li class="mb-3"><i class="fas fa-check text-muted me-2"></i>Certificate after completion</li>
+                    <li class="mb-3"><i class="fas fa-check text-muted me-2"></i> Private sessions</li>
+                  </ul>
+                  <div class="d-grid"> <a class="btn btn-lg btn-primary" href=" {% static '#!' %} ">Purchase now</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-5 mb-md-0 h-100">
+                <div class="text-center mb-5"><span class="badge bg-black fw-normal text-uppercase bg-info">premium</span></div>
+                <div class="card-body px-4 py-6 py-md-5 py-lg-6">
+                  <div class="d-flex justify-content-start text-secondary"><span class="h4 mb-0 mt-2 me-2">$</span><span class="display-3 fw-medium">29.</span><span class="display-4 fw-medium">00</span></div>
+                  <p class="text-muted mb-2 my-md-3">A private limited is the most popular</p>
+                  <hr class="border border-1" />
+                  <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Access to 25 courses</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Course Discussions</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Certificate after completion</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Offline Viewing</li>
+                    <li class="mb-3"><i class="fas fa-check text-muted me-2"></i> Private sessions</li>
+                  </ul>
+                  <div class="d-grid"><a class="btn btn-lg btn-secondary" href=" {% static '#!' %} ">Purchase now</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-5 mb-md-0 h-100">
+                <div class="text-center mb-5"><span class="badge bg-black fw-normal text-uppercase bg-danger">enterprise</span></div>
+                <div class="card-body px-4 py-6 py-md-5 py-lg-6">
+                  <div class="d-flex justify-content-start text-secondary"><span class="h4 mb-0 mt-2 me-2">$</span><span class="display-3 fw-medium">49.</span><span class="display-4 fw-medium">00</span></div>
+                  <p class="text-muted mb-2 my-md-3">A private limited is the most popular</p>
+                  <hr class="border border-1" />
+                  <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Access to 25 courses</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Course Discussions</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Certificate after completion</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i>Offline Viewing</li>
+                    <li class="mb-3"><i class="fas fa-check text-info me-2"></i> Private sessions</li>
+                  </ul>
+                  <div class="d-grid"> <a class="btn btn-lg btn-primary" href=" {% static '#!' %} ">Purchase now</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section>
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-lg-4 mb-5"><img src=" {% static 'assets/img/gallery/cta.png' %} " width="280" alt="cta" /></div>
+            <div class="col-md-6 col-lg-5">
+              <h5 class="text-primary font-sans-serif fw-bold">Subscrible now</h5>
+              <h1 class="mb-5">Get every single<br />update you will get</h1>
+              <form class="row g-0 align-items-center">
+                <div class="col">
+                  <div class="input-group-icon">
+                    <input class="form-control form-little-squirrel-control" type="email" placeholder="Enter email " aria-label="email" /><i class="fas fa-envelope input-box-icon"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary rounded-0" type="submit">Subscribe now</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      {% include 'pages/main_footer.html' %}
+
+    {% include 'pages/scripts.html' %}
+  </body>

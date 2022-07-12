@@ -1,0 +1,112 @@
+{% load static %}
+{% include 'pages/head.html' %}
+
+  <body>
+
+ {% include 'pages/main_navbar.html' %}
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pb-11 pt-7 bg-600">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h6 class="font-sans-serif text-primary fw-bold">Explore Our Courses</h6>
+              <h1 class="mb-6">From Beginner to Advanced</h1>
+              <form class="row g-3">
+                <div class="col-sm-6 col-md-3">
+                  <label class="form-label" for="inputCategories">Categories</label>
+                  <select class="form-select" id="inputCategories">
+                    <option selected="selected">Web development</option>
+                    <option value="1">Data Science</option>
+                    <option value="2">Data Analysis</option>
+                    <option value="3">Python Programming</option>
+                    <option value="4">Software Development</option>
+                  </select>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                  <label class="form-label" for="inputLevel">Level</label>
+                  <select class="form-select" id="inputLevel">
+                    <option selected="selected">All Level</option>
+                    <option value="1">Begineer </option>
+                    <option value="2">Intermediate </option>
+                    <option value="3">Advanced</option>
+                  </select>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                  <label class="form-label" for="inputLanguage">Courses</label>
+                  <select class="form-select" id="inputLanguage">
+                    <option selected="selected">English</option>
+
+                  </select>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                  <label class="form-label" for="inputInstructor">Instructor</label>
+                  <select class="form-select" id="inputInstructor">
+                    <option selected="selected">All Instructor </option>
+                  </select>
+                </div>
+                <div class="col-auto z-index-2">
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pb-0" style="margin-top:-17rem">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card h-100"><img class="card-img-top w-100" src=" {% static 'assets/img/gallery/python.jpg' %} " alt="courses" height= 200 width=200/>
+                <div class="card-body">
+                  <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Python Programming</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href=" {% static '#!' %} ">Advaned</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100"><img class="card-img-top w-100" src=" {% static 'assets/img/gallery/data-analyst.jpg' %} " alt="courses" height=200 width=200/>
+                <div class="card-body">
+                  <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Data Analysis</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href=" {% static '#!' %} ">Advaned</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100"><img class="card-img-top w-100" src=" {% static 'assets/img/gallery/data-science.png' %} " alt="courses" height=200 width=200/>
+                <div class="card-body">
+                  <h5 class="font-sans-serif fw-bold fs-md-0 fs-lg-1">Data Science</h5><a class="text-muted fs--1 stretched-link text-decoration-none" href=" {% static '#!' %} ">Advaned</a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+ {% include 'pages/newsletter.html' %}
+
+{% include 'pages/main_footer.html' %}
+
+
+
+{% include 'pages/scripts.html' %}
+  </body>
+
+</html>

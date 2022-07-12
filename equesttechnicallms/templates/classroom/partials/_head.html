@@ -1,0 +1,24 @@
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="I need a Tutor - Find the best tutor around your area with more convenience. pass yuor exams with better grades. I need a Tutor is here to help. I need a Tutor attempts to provide the best learning platform for students by recommending qualified tutors to make sure students get the best of their payment. It also provide a safe learning environment to our Tutors and ensures that everyone is treated with respect">
+  <meta name="author" content="I need a Tutor">
+  <meta name="keywords" content="Tutor, i need a tutor, teacher, subjects, learn">
+  <meta name="theme-color" content="#800000" />
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'img/brand/4.png' %}" type="image/png">
+
+  <title>{% block title %}{% endblock title %} Equesttech </title>
+  <!-- Preloader -->
+
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector('body').classList.add('loaded');
+      }, 300);
+    });
+  </script>
+  {% include "classroom/partials/_stylesheet.html" %}
+
+</head>

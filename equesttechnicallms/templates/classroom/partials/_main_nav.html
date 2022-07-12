@@ -1,0 +1,63 @@
+{% load static %}
+
+<!-- Dashboard Menu -->
+<ul class="navbar-nav ml-lg-auto">
+  <!-- Overview -->
+  <li class="nav-item nav-item-spaced d-none d-lg-block">
+    <a class="nav-link" href="{% url 'dashboard' %}">
+      Dashboard
+    </a>
+  </li>
+
+  <!-- Lesson Menu -->
+  <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
+    <a class="nav-link" href="{% url 'classroom:logout' %}" role="button" aria-haspopup="true" aria-expanded="false">Logout</a>
+    {% if is_tutor or is_student %}
+    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow p-3 show">
+      <a href="{% url 'lesson:new' %}" class="dropdown-item">
+        <i class="fa fa-book"></i>
+        <span>Book a Lesson </span>
+      </a>
+      {% if user.is_teacher %}
+      <a href="{% url 'classroom:class_student_list' %}" class="dropdown-item">
+        <i class="fa fa-graduation-cap"></i>
+        <span>My students</span>
+      </a>
+      {% endif %}
+      {% if user.is_student %}
+      <a href="{% url 'classroom:teachers_list' %}" class="dropdown-item">
+        <i class="fa fa-chalkboard-teacher"></i>
+        <span>My Course</span>
+      </a>
+      <div class="mt-2 pt-2 border-top"></div>
+      <a href="{% url 'tutor:tutor-list' %}" class="dropdown-item">
+        <i class="fa fa-search-plus"></i>
+        <span>Find Tutors</span>
+      </a>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="dropdown-menu dropdown-menu-md p-0">
+      <ul class="list-group list-group-flush px-lg-4">
+      </ul>
+    </div>
+  </li>
+  <!-- Message Menu -->
+  <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
+{#    <a class="nav-link" href="{% url 'message:message' %}" role="button" aria-haspopup="true" aria-expanded="false">Messages</a>#}
+    <div class="dropdown-menu dropdown-menu-md p-0">
+      <ul class="list-group list-group-flush px-lg-4">
+      </ul>
+    </div>
+  </li>
+  <!-- Earnings Menu -->
+  {% if is_tutor %}
+  <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
+{#    <a class="nav-link" href="{% url 'tutor:earnings' %}" role="button" aria-haspopup="true" aria-expanded="false">Earnings</a>#}
+    <div class="dropdown-menu dropdown-menu-md p-0">
+      <ul class="list-group list-group-flush px-lg-4">
+      </ul>
+    </div>
+  </li>
+  {% endif %}
+</ul>

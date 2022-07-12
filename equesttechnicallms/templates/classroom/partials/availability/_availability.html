@@ -1,0 +1,128 @@
+{% load static %}
+
+<div class="card">
+  <div class="card-header">
+    <h6>Availability</h6>
+  </div>
+
+  <!-- Monday -->
+  <div class="list-group list-group-flush">
+    <a href="#" class="list-group-item list-group-item-action border-0 py-2">
+      <div class="d-flex">
+        {% if member.available_days %}
+        <div>
+          {% if member.availability.monday %}
+          <i class="fa fa-check-square text-success"></i>&nbsp;&nbsp;
+          {% else %}
+          <i class="fa fa-check-square text-danger"></i>&nbsp;&nbsp;
+          {% endif %}
+        </div>
+        <div>
+          <div class="text-sm lh-150">Monday</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Tuesday -->
+    <a href="#" class="list-group-item list-group-item-action border-0 py-2">
+      <div class="d-flex">
+        <div>
+          {% if member.availability.tuesday %}
+          <i class="fa fa-check-square text-success"></i>&nbsp;&nbsp;
+          {% else %}
+          <i class="fa fa-check-square text-danger"></i>&nbsp;&nbsp;
+          {% endif %}
+        </div>
+        <div>
+          <div class="text-sm lh-150">Tuesday</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Wednesday -->
+    <a href="#" class="list-group-item list-group-item-action border-0 py-2">
+      <div class="d-flex">
+        <div>
+          {% if member.availability.wednesday %}
+          <i class="fa fa-check-square text-success"></i>&nbsp;&nbsp;
+          {% else %}
+          <i class="fa fa-check-square text-danger"></i>&nbsp;&nbsp;
+          {% endif %}
+        </div>
+        <div>
+          <div class="text-sm lh-150">Wednesday</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Thursday -->
+    <a href="#" class="list-group-item list-group-item-action border-0 py-2">
+      <div class="d-flex">
+        <div>
+          {% if member.availability.thursday %}
+          <i class="fa fa-check-square text-success"></i>&nbsp;&nbsp;
+          {% else %}
+          <i class="fa fa-check-square text-danger"></i>&nbsp;&nbsp;
+          {% endif %}
+        </div>
+        <div>
+          <div class="text-sm lh-150">Thursday</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Friday -->
+    <a href="#" class="list-group-item list-group-item-action border-0 py-2">
+      <div class="d-flex">
+        <div>
+          {% if member.availability.friday %}
+          <i class="fa fa-check-square text-success"></i>&nbsp;&nbsp;
+          {% else %}
+          <i class="fa fa-check-square text-danger"></i>&nbsp;&nbsp;
+          {% endif %}
+        </div>
+        <div>
+          <div class="text-sm lh-150">Friday</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Saturday -->
+    <a href="#" class="list-group-item list-group-item-action border-0 py-2">
+      <div class="d-flex">
+        <div>
+          {% if member.availability.saturday %}
+          <i class="fa fa-check-square text-success"></i>&nbsp;&nbsp;
+          {% else %}
+          <i class="fa fa-check-square text-danger"></i>&nbsp;&nbsp;
+          {% endif %}
+        </div>
+        <div>
+          <div class="text-sm lh-150">Saturday</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sunday -->
+    <a href="#" class="list-group-item list-group-item-action border-0 py-2">
+      <div class="d-flex">
+        <div>
+          {% if member.availability.sunday %}
+          <i class="fa fa-check-square text-success"></i>&nbsp;&nbsp;
+          {% else %}
+          <i class="fa fa-check-square text-danger"></i>&nbsp;&nbsp;
+          {% endif %}
+        </div>
+        <div>
+          <div class="text-sm lh-150">Sunday</div>
+        </div>
+      </div>
+    </a>
+
+    {% else %}
+    <div class="text-danger">Availability not set</div>
+    {% endif %}
+
+  </div>
+</div>
+</div>

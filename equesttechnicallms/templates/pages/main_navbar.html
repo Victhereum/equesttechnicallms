@@ -1,0 +1,70 @@
+  {% load static %}
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="bg-primary py-2 d-none d-sm-block">
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-auto d-none d-lg-block">
+              <p class="my-2 fs--1"><i class="fas fa-map-marker-alt me-3"></i><span>Favour Award Mall, Artillery, PH </span></p>
+            </div>
+            <div class="col-auto ms-md-auto order-md-2 d-none d-sm-block">
+              <ul class="list-unstyled list-inline my-2">
+                <li class="list-inline-item"><a class="text-decoration-none" href="https://www.facebook.com/equesttech"><i class="fab fa-facebook-f text-900"></i></a></li>
+                <li class="list-inline-item"><a class="text-decoration-none" href="#"><i class="fab fa-pinterest text-900"></i></a></li>
+                <li class="list-inline-item"><a class="text-decoration-none" href="https://twitter.com/equesttech/"><i class="fab fa-twitter text-900"></i></a></li>
+                <li class="list-inline-item"><a class="text-decoration-none" href="https://www.instagram.com/equesttechng/"><i class="fab fa-instagram text-900"> </i></a></li>
+              </ul>
+            </div>
+            <div class="col-auto">
+              <p class="my-2 fs--1"><i class="fas fa-envelope me-3"></i><a class="text-900" href="mailto:info@equesttech.ng">info@equesttech.ng </a></p>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href=" {% url 'home' %}"><img src=" {% static 'assets/img/gallery/logo.ico' %} " height="45" alt="logo" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+              <li class="nav-item px-2"><a class="nav-link active" aria-current="page" href=" {% url 'home' %} ">Home</a></li>
+
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href=" {% url 'courses' %} ">Courses</a></li>
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href=" {% url 'blog:bloghome' %} ">Blog</a></li>
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href=" {% url 'videos:videohome' %} ">Videos</a></li>
+                {% if user.is_authenticated %}
+            </ul><a class="btn btn-primary order-1 order-lg-0" href=" {% url 'base:dashboard' %} ">Dashoard</a>
+            </ul><a class="btn btn-primary order-1 order-lg-0" style="margin-left: 5px;" href=" {% url 'room-index' %} ">Rooms</a>
+            </ul><a class="btn btn-primary order-1 order-lg-0" style="margin-left: 5px;" href=" {% url 'users:logout' %} ">Logout</a>
+                {% else %}
+            </ul><a class="btn btn-primary order-1 order-lg-0" href=" {% url 'users:register' %} ">Sign Up</a>
+            </ul><a class="btn btn-primary order-1 order-lg-0" style="margin-left: 5px;" href=" {% url 'users:login' %} ">Login</a>
+              {% endif %}
+            <form class="d-flex my-3 d-block d-lg-none">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+            <div class="dropdown d-none d-lg-block">
+              <button class="btn btn-outline-light ms-2" id="dropdownMenuButton1" type="submit" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-search text-800"></i></button>
+              <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1" style="top:55px">
+                <form>
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                </form>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </main>

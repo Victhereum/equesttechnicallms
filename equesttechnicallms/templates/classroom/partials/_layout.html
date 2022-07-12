@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "classroom/partials/_head.html" %}
+
+<body>
+  <!-- Modal profile -->
+  {% include "classroom/partials/_preloader.html" %}
+
+  {% if user.is_authenticated %}
+  <!-- Modal profile -->
+  {% include "classroom/partials/_modal_notifications.html" %}
+  {% endif %}
+
+  <!-- Cookies -->
+{#  {% include "classroom/partials/_cookies.html" %}#}
+
+
+  {% if user.is_authenticated %}
+    <!-- Navbar -->
+    {% include "classroom/partials/_navbar.html" %}
+
+    <!-- Modal profile -->
+{#    {% include "classroom/partials/_modal_profile.html" %}#}
+
+    <!-- Switch theme -->
+    {% include "classroom/partials/_switch_theme.html" %}
+
+  {% else %}
+
+  {% include "classroom/partials/_unauthenticated_navbar.html" %}
+
+  {% endif %}
+
+  <!-- Modal profile -->
+  {% include "classroom/partials/_omnisearch.html" %}
+
+  <!-- Main content -->
+  {% block body %}{% endblock body %}
+
+</body>
+
+{% include "classroom/partials/_footer.html" %}
+{% include "classroom/partials/_script.html" %}
+
+{% block extrascripts %}{% endblock extrascripts %}
+
+</html>

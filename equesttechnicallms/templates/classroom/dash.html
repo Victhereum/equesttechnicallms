@@ -1,0 +1,112 @@
+{% extends 'classroom/base.html' %}
+{% load static %}
+{% block content %}
+            <!-- Begin Page Content -->
+            <div class="container-fluid px-lg-4">
+                <div class="row">
+                    <div class="col-md-12 mt-lg-4 mt-4">
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+{#                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>#}
+{#                                Generate Report</a>#}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Name</h5>
+                                        <h1 class="display-5 mt-1 mb-3">{{ name }}</h1>
+{#                                        <div class="mb-1">#}
+{#                                            <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>#}
+{#                                            <span class="text-muted">Exelent</span>#}
+{#                                        </div>#}
+                                    </div>
+                                </div>
+
+                            </div>
+                            {% if user.is_student %}
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Course</h5>
+                                        <h1 class="display-5 mt-1 mb-3">{{ given_marks.subject_name }}</h1>
+                                        <div class="mb-1">
+                                            <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i>Tutor</span>
+                                            <span class="text-muted">{{ object.teacher.name }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Marks</h5>
+                                        <h1 class="display-5 mt-1 mb-3">{{ object.marks_obtained.sum }}</h1>
+                                        <div class="mb-1">
+                                            <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> Out Of</span>
+                                            <span class="text-muted">{{ object.maximum_marks.sum }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {% else %}
+                                                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Course</h5>
+                                        <h1 class="display-5 mt-1 mb-3">{{ given_marks.subject_name }}</h1>
+                                        <div class="mb-1">
+                                            <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i>No of Students</span>
+                                            <span class="text-muted">{{ object.teacher.name }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Email</h5>
+                                        <h6 class="display-5 mt-1 mb-3">{{ user.email }}</h6>
+                                        <div class="mb-1">
+                                            <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> Phone No </span>
+                                            <span class="text-muted">{{ user.phone }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                    <!-- column -->
+                    <div class="col-md-12 mt-4">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- title -->
+
+                                <!-- title -->
+                            </div>
+                            <div class="table-responsive">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+
+{% endblock %}

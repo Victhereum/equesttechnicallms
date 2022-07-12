@@ -1,0 +1,75 @@
+{% extends "pages/layout.html" %}
+{#{% extends 'classroom/partials/_layout.html' %}#}
+{% block content %}
+{#<style>#}
+{#    body {#}
+{#        font-family: "Roboto", sans-serif;#}
+{#        font-size: 18px;#}
+{#        background-color: #fdfdfd;#}
+{#    }#}
+{#    #}
+{#    .head_text {#}
+{#        color: white;#}
+{#    }#}
+{#    #}
+{#    .card {#}
+{#        box-shadow: 0 16px 48px #E3E7EB;#}
+{#    }#}
+{#</style>#}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-black align-left" > Welcome to Equestech </h3>
+                    <p class="text-black">Equestech.ng is an educational site providing content on Python programming,
+                        Data Science and Machine Learning to all the programmers and budding programmers
+                        across the internet. The main goal of this site is to provide quality tips,
+                        tricks, hacks, and other Programming resources that allows beginners to improve their skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 center">
+            {% for post in videos %}
+                <h2 class="card-title">{{ post.title }}</h2>
+                <iframe width="100%" height="490"
+                        src="https://www.youtube.com/embed/{{ post.url }}"
+                        title="{{post.title}}"
+                        frameborder="0"
+                        allow="accelerometer;
+                         autoplay;
+                         clipboard-write;
+                          encrypted-media;
+                          gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <br>
+                <br>
+                <br>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% if is_paginated %}
+  <nav aria-label="Page navigation conatiner"></nav>
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+    {% endif %}
+  </ul>
+{#  </nav>#}
+{#</div>#}
+{% endif %}
+
+{% endblock content %}
