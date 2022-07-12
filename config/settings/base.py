@@ -7,6 +7,7 @@ from urllib.parse import urlparse
 
 import environ
 import os
+import django_heroku
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # equesttechnicallms/
@@ -295,6 +296,8 @@ ACCOUNT_ADAPTER = "equesttechnicallms.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "equesttechnicallms.users.adapters.SocialAccountAdapter"
 
+# Django-Heroku-Stuff
+django_heroku.settings(locals())
 
 # Your stuff...
 # ------------------------------------------------------------------------------
