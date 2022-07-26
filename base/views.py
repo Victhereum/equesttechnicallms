@@ -27,6 +27,7 @@ from equesttechnicallms.users.models import User
 def dashboard(request):
     name = request.user
     user = User.objects.get(id=request.user.id)
+    # teacher = user.fil
     dic = {
         'name': name,
         'user': user,
