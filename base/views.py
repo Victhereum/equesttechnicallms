@@ -199,6 +199,7 @@ def class_students_list(request):
             pass
     context = {
         "class_students_list": qs_one,
+        "students": students,
     }
     template = "classroom/class_students_list.html"
     return render(request, template, context)
