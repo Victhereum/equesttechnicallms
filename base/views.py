@@ -27,10 +27,14 @@ from equesttechnicallms.users.models import User
 def dashboard(request):
     name = request.user
     user = User.objects.get(id=request.user.id)
-    # teacher = user.fil
+    count = StudentsInClass.objects.filter(instructor=request.user.Instructors)
+    instructor = Instructors.objects.get(user=request.user)
+    print(instructor)
     dic = {
         'name': name,
         'user': user,
+        'student_count': count,
+        'instructor': instructor,
     }
     return render(request, 'classroom/dash.html', context=dic)
 
