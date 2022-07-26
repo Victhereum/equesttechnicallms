@@ -64,6 +64,8 @@ class Instructors(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
+    def mystudents(self):
+        return self.class_students.count()
 
 class StudentMarks(models.Model):
     instructor = models.ForeignKey(Instructors, related_name='given_marks', on_delete=models.CASCADE)
