@@ -15,7 +15,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.http import HttpResponseRedirect, HttpResponse
 from base import models
-from base.models import StudentsInClass, StudentMarks, ClassAssignment, SubmitAssignment, Student, Instructors
+from base.models import Courses, StudentsInClass, StudentMarks, ClassAssignment, SubmitAssignment, Student, Instructors, Courses
 from django.contrib.auth.forms import PasswordChangeForm
 from django.db.models import Q
 
@@ -184,6 +184,11 @@ def InstructorUpdateView(request, pk):
     else:
         form = InstructorProfileUpdateForm(request.POST or None, instance=instructor)
     return render(request, 'classroom/teacher_update_page.html', {'profile_updated': profile_updated, 'form': form})
+
+# # List Courses when searched
+# def coursesList(request):
+#     query = request.GET.get('q', None)
+#     courses = Courses.object.all()
 
 
 ## List of all students that instructor has added in their class.
