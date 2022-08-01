@@ -279,7 +279,7 @@ def add_notice(request):
         notice = NoticeForm(request.POST)
         if notice.is_valid():
             object = notice.save(commit=False)
-            object.instructors = instructor
+            object.instructor = instructor
             object.save()
             object.students.add(*students_list)
             notice_sent = True
