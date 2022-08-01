@@ -36,9 +36,20 @@ def dashboard(request):
         }
         return render(request, 'classroom/dash.html', context=dic)
     elif user.is_student:
+        student = StudentsInClass.objects.get(student_id=request.user.id)
+        instructor = student.instructor
+        studentmarks = StudentMarks.objects.filter(instructor=instructor, student_id=request.user.id)
+        count = 0
+        max_count = 0
+        for marks in studentmarks:
+            count += marks.marks_obtained
+            max_count += marks.maximum_marks
         dic = {
             'name': name,
             'user': user,
+            'student': student,
+            'student_marks': count,
+            'total_marks': max_count,
                 }
         return render(request, 'classroom/dash.html', context=dic)
 
@@ -93,7 +104,7 @@ def StudentSignUp(request):
             profile.save()
 
             registered = True
-            return HttpResponseRedirect(reverse('classroom:login'))
+            return HttpResponseRedirect(reverse('base:login'))
         else:
             messages.error(request, 'Sign up failed')
     else:
@@ -128,7 +139,7 @@ def user_login(request):
 
         else:
             messages.error(request, "This user is invalid, try signing up")
-            return redirect('classroom:login')
+            return redirect('base:login')
     else:
         return render(request, 'classroom/login.html', {})
 
@@ -236,7 +247,7 @@ def add_marks(request,pk):
             marks.instructor = request.user.Instructors
             marks.save()
             messages.success(request,'Marks uploaded successfully!')
-            return redirect('classroom:submit_list')
+            return redirect('base:submit_list')
     else:
         form = MarksForm()
     return render(request,'classroom/add_marks.html',{'form':form,'student':student,'marks_given':marks_given})
@@ -430,7 +441,7 @@ def update_assignment(request,id=None):
             obj.assignment = request.FILES['assignment']
         obj.save()
         messages.success(request, "Updated Assignment".format(obj.assignment_name))
-        return redirect('classroom:assignment_list')
+        return redirect('base:assignment_list')
     template = "classroom/update_assignment.html"
     return render(request, template, context)
 
@@ -441,7 +452,7 @@ def assignment_delete(request, id=None):
     if request.method == "POST":
         obj.delete()
         messages.success(request, "Assignment Removed")
-        return redirect('classroom:assignment_list')
+        return redirect('base:assignment_list')
     context = {
         "object": obj,
     }
@@ -489,7 +500,7 @@ def change_password(request):
             messages.success(request, "Password changed")
             return redirect('home')
         else:
-            return redirect('classroom:change_password')
+            return redirect('base:change_password')
     else:
         form = PasswordChangeForm(user=request.user)
         args = {'form':form}

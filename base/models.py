@@ -75,7 +75,7 @@ class StudentMarks(models.Model):
     maximum_marks = models.IntegerField()
 
     def __str__(self):
-        return self.course
+        return self.course.name
 
 
 class StudentsInClass(models.Model):

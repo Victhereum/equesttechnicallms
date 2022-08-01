@@ -32,10 +32,10 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title mb-4">Course</h5>
-                                        <h1 class="display-5 mt-1 mb-3">{{ given_marks.subject_name }}</h1>
+                                        <h1 class="display-5 mt-1 mb-3">{{ student.instructor.course_category }}</h1>
                                         <div class="mb-1">
                                             <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i>Tutor</span>
-                                            <span class="text-muted">{{ object.teacher.name }}</span>
+                                            <span class="text-muted">{{ student.instructor }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -45,10 +45,10 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title mb-4">Marks</h5>
-                                        <h1 class="display-5 mt-1 mb-3">{{ object.marks_obtained.sum }}</h1>
+                                        <h1 class="display-5 mt-1 mb-3">{{ student_marks }}</h1>
                                         <div class="mb-1">
                                             <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> Out Of</span>
-                                            <span class="text-muted">{{ object.maximum_marks.sum }}</span>
+                                            <span class="text-muted">{{ total_marks }}</span>
                                         </div>
                                     </div>
                                 </div>
