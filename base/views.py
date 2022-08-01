@@ -7,6 +7,8 @@ from django.views.generic import  (View,TemplateView,
 from django.utils.decorators import method_decorator
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from equesttechnicallms.users.forms import MyUserCreationForm, UserForm
 # Create your views here.
 from .forms import InstructorProfileForm,StudentProfileForm,MarksForm,MessageForm,NoticeForm,AssignmentForm,SubmitForm,InstructorProfileUpdateForm,StudentProfileUpdateForm
 from django.urls import reverse
@@ -266,7 +268,7 @@ def add_notice(request):
         notice = NoticeForm(request.POST)
         if notice.is_valid():
             object = notice.save(commit=False)
-            object.instructors = teacher
+            object.instructors = instructor
             object.save()
             object.students.add(*students_list)
             notice_sent = True
