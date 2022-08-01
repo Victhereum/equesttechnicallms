@@ -5,6 +5,7 @@ from .base import env
 
 # GENERAL
 # ------------------------------------------------------------------------------
+DEBUG=False
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
