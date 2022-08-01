@@ -14,7 +14,7 @@
     </div>
     {% endif %}
 
-{% if teacher.teacher_submit.count == 0 %}
+{% if instructor.teacher_submit.count == 0 %}
   <h2>No Submissions Yet</h2>
 {% else %}
   <table class="table">
@@ -29,14 +29,14 @@
       </tr>
     </thead>
     <tbody>
-      {% for submission in teacher.teacher_submit.all %}
+      {% for submission in instructor.teacher_submit.all %}
         <tr>
           <th scope="row">{{ forloop.counter }}</th>
-          <td>{{ submission.student.name }}</td>
+          <td>{{ submission.student }}</td>
           <td>{{ submission.submitted_assignment.assignment_name }}</td>
           <td>{{ submission.created_at }}</td>
           <td><a href="{{ submission.submit.url }}" class="btn btn-primary" target="_blank">Download</a></td>
-          <td> <a class="btn btn-danger"  href="{% url 'classroom:enter_marks' pk=submission.student.pk %}">Enter Marks</a> </td>
+          <td> <a class="btn btn-danger"  href="{% url 'base:enter_marks' pk=submission.student.pk %}">Enter Marks</a> </td>
         </tr>
       {% endfor %}
     </tbody>

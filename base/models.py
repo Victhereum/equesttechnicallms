@@ -133,6 +133,9 @@ class ClassAssignment(models.Model):
     def __str__(self):
         return self.assignment_name
 
+    def get_instructor(self):
+        return self.instructor_id
+
     class Meta:
         ordering = ['-created_at']
 
@@ -147,6 +150,9 @@ class SubmitAssignment(models.Model):
 
     def __str__(self):
         return "Submitted" + str(self.submitted_assignment.assignment_name)
+
+    def get_instructor(self):
+        return self.submitted_assignment.instructor
 
     class Meta:
         ordering = ['-created_at']
